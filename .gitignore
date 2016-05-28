@@ -25,6 +25,9 @@
 # Executables
 *.exe
 *.out
+*.vcxproj
+*.vcxproj.filters
+__vm
 *.app
 # Directories potentially created on remote AFP share
 .AppleDB
