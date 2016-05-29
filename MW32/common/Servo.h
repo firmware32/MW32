@@ -3,12 +3,9 @@
 #ifndef _SERVO_h
 #define _SERVO_h
 
-#include "arduino.h"
-#include "PWM32.h"
+#include "./platform.h"
 
-#include "Types.h"
-#include "Servo32.h"
-class Servo : Servo32 
+class Servo : public Servo32 
 {
  protected:
 

@@ -3,7 +3,7 @@
 #ifndef _TYPES_h
 #define _TYPES_h
 
-#include "arduino.h"
+#include "./platform.h"
 
 /**************************************************************************************/
 /***************      Multitype decleration for the GUI's          ********************/
@@ -33,7 +33,8 @@ enum motor_position_e {
 	MOTOR_POS_LEFT_MID_F = 4,
 	MOTOR_POS_RIGHT_MID_F = 5,
 	MOTOR_POS_LEFT_MID_R =6,
-	MOTOR_POS_RIGHT_MID_R=7
+	MOTOR_POS_RIGHT_MID_R=7,
+	MOTOR_NOT_SET = 99
 };
 enum servo_type_e {
 	SERVO_TYPE_ROLL = 0,
@@ -43,8 +44,18 @@ enum servo_type_e {
 	SERVO_TYPE_LEFT_AIL =4,
 	SERVO_TYPE_RIGHT_AIL=5,
 	SERVO_TYPE_RUDDER = 6,
-	SERVO_TYPE_ELEV = 7
+	SERVO_TYPE_ELEV = 7,
+	SERVO_TYPE_NOT_SET = 99
 };
 
+typedef struct {
+	airframe_type_e type;
+	uint8_t MortorPinCount;
+	uint8_t MotorPins[MOTOR_COUNT];
+	motor_position_e MotorPosition[MOTOR_COUNT];
+	uint8_t ServoPinCount;
+	uint8_t ServoPins[MOTOR_COUNT];
+	servo_type_e ServoType[MOTOR_COUNT];
+} airframe_config_t;
 #endif
 
